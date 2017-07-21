@@ -44,7 +44,8 @@ String.prototype.contains = function(content){
 }
 bot.dialog('/', function (session) {
     if(session.message.text.toLowerCase().contains('hello')){
-       session.message.user.name;
+       var name = session.message.user.name;
+       session.send("Hello %s... If you want to see some boobies you cum to the right bot ]:).", name || 'there');
       }else if(session.message.text.toLowerCase().contains('help')){
         session.send(`How can I help you?`);
       }else{
