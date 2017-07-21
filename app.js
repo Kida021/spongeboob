@@ -1,27 +1,17 @@
-
-
-var builder = require('botbuilder');
 var restify = require('restify');
-
+var builder = require('botbuilder');
+//=========================================================
+// Bot Setup
+//=========================================================
 // Setup Restify Server
 var server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 3978, function () {
-    console.log('%s listening to %s', server.name, server.url);
+server.listen(process.env.port || process.env.PORT || 8080, function () {
+   console.log('%s listening to %s', server.name, server.url);
 });
-
 // Create chat bot
 var connector = new builder.ChatConnector({
-    appId: 2c985f76-12fb-4255-9cc7-9fb5b52afe76,
-    appPassword: NnGS6VJbVgqaef1MiLhzo1a
-});
-
-// Listen for messages
-server.post('/api/messages', connector.listen());
-
-// Create chat bot
-var connector = new builder.ChatConnector({
-    appId: "2c985f76-12fb-4255-9cc7-9fb5b52afe76",
-    appPassword: "GjbMqoaLdm2gwVq0VPjgGxx"
+    appId: "Your App ID Here",
+    appPassword: "Your App Password Here"
 });
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
