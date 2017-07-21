@@ -20,8 +20,8 @@ server.post('/api/messages', connector.listen());
 
 // Create chat bot
 var connector = new builder.ChatConnector({
-    appId: "8a542b90-96c6-42ce-91ba-3aeb28470e62",
-    appPassword: "QcDi824W8C1oof6eaAu63J9"
+    appId: "2c985f76-12fb-4255-9cc7-9fb5b52afe76",
+    appPassword: "GjbMqoaLdm2gwVq0VPjgGxx"
 });
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
