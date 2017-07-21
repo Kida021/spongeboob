@@ -1,50 +1,75 @@
-var restify = require('restify');
+require('dotenv-extended').load();
+
 var builder = require('botbuilder');
-//=========================================================
-// Bot Setup
-//=========================================================
+var restify = require('restify');
+var Promise = require('bluebird');
+var request = require('request-promise').defaults({ encoding: null });
+
 // Setup Restify Server
 var server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 8080, function () {
-   console.log('%s listening to %s', server.name, server.url);
+server.listen(process.env.port || process.env.PORT || 3978, function () {
+    console.log('%s listening to %s', server.name, server.url);
 });
+
 // Create chat bot
 var connector = new builder.ChatConnector({
-    appId: "1ce3e0ba-d900-41d8-83ec-0279c141e521",
-    appPassword: "MPf1F37ouqdAO2A34Ub7kpp"
+    appId: process.env.MICROSOFT_APP_ID,
+    appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
-var bot = new builder.UniversalBot(connector);
+
+// Listen for messages
 server.post('/api/messages', connector.listen());
-//Bot on
-bot.on('contactRelationUpdate', function (message) {
-    if (message.action === 'add') {
-        var name = message.user ? message.user.name : null;
-        var reply = new builder.Message()
-                .address(message.address)
-                .text("Hello %s... Thanks for adding me. Say 'hello' to see some great demos.", name || 'there');
-        bot.send(reply);
+
+var bot = new builder.UniversalBot(connector, function (session) {
+
+    var msg = session.message;
+    if (msg.attachments.length) {
+
+        // Message with attachment, proceed to download it.
+        // Skype & MS Teams attachment URLs are secured by a JwtToken, so we need to pass the token from our bot.
+        var attachment = msg.attachments[0];
+        var fileDownload = checkRequiresToken(msg)
+            ? requestWithToken(attachment.contentUrl)
+            : request(attachment.contentUrl);
+
+        fileDownload.then(
+            function (response) {
+
+                // Send reply with attachment type & size
+                var reply = new builder.Message(session)
+                    .text('Attachment of %s type and size of %s bytes received.', attachment.contentType, response.length);
+                session.send(reply);
+
+            }).catch(function (err) {
+                console.log('Error downloading attachment:', { statusCode: err.statusCode, message: err.response.statusMessage });
+            });
+
     } else {
-        // delete their data
+
+        // No attachments were sent
+        var reply = new builder.Message(session)
+            .text('Hi there! This sample is intented to show how can I receive attachments but no attachment was sent to me. Please try again sending a new message with an attachment.');
+        session.send(reply);
     }
+
 });
-bot.on('typing', function (message) {
-  // User is typing
-});
-bot.on('deleteUserData', function (message) {
-    // User asked to delete their data
-});
-//=========================================================
-// Bots Dialogs
-//=========================================================
-String.prototype.contains = function(content){
-  return this.indexOf(content) !== -1;
-}
-bot.dialog('/', function (session) {
-    if(session.message.text.toLowerCase().contains('hello')){
-      session.send(`Hey, How are you?`);
-      }else if(session.message.text.toLowerCase().contains('help')){
-        session.send(`How can I help you?`);
-      }else{
-        session.send(`Sorry I don't understand you...`);
-      }
-});
+
+// Request file with Authentication Header
+var requestWithToken = function (url) {
+    return obtainToken().then(function (token) {
+        return request({
+            url: url,
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/octet-stream'
+            }
+        });
+    });
+};
+
+// Promise for obtaining JWT Token (requested once)
+var obtainToken = Promise.promisify(connector.getAccessToken.bind(connector));
+
+var checkRequiresToken = function (message) {
+    return message.source === 'skype' || message.source === 'msteams';
+};
