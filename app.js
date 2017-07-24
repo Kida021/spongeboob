@@ -69,7 +69,8 @@ bot.dialog('/', function (session) {
             session.send(`How can I help you?`);
             session.send(`i can search anything about oppai just ask me!`);
             session.send(`Here's my available search option`);
-            session.send(`search`);   
+            session.send(`search`);
+            session.send(`types of boob`);
         }else{
             session.send(`Sorry I don't understand you...`);
         }
