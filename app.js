@@ -44,11 +44,11 @@ String.prototype.contains = function(content){
 }
 
 bot.dialog('/', function (session) {
-     var input = message.content.toLowerCase();
-     var name = message.user.name;
+     var input = session.message.text.content.toLowerCase();
+     var name = session.message.user.name;
       //starting a conversation.
       if(input == 'hello'){
-         bot.reply(message,"Hello %s... If you want to see some boobies you cum to the right bot ]:).", name || 'there');
+         bot.reply(session,"Hello %s... If you want to see some boobies you cum to the right bot ]:).", name || 'there');
       }else if(session.message.text.toLowerCase().contains('boobs') || session.message.text.toLowerCase().contains('boobies') ){
         session.send(`Here you Go!`);
          session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://i.ytimg.com/vi/GX6EcdC46X8/hqdefault.jpg'}]});
