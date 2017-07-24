@@ -59,11 +59,12 @@ bot.dialog('/', function (session) {
 
 bot.on("msessage", function(message){
            var input = message.content.toLowerCase();
-   
+           var name = message.user.name;
             //starting a conversation.
             if(input == 'hello'){
-               var name = message.user.name;
                bot.reply(message,"Hello %s... If you want to see some boobies you cum to the right bot ]:).", name || 'there');
+            }else{
+               bot.reply(message,"Sorry %s i don't understand what you say. please try again!", name || 'there');
             }
       }
       );
