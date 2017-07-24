@@ -70,6 +70,9 @@ bot.dialog('/', function (session) {
             session.send(`Here's my available search option`);
             session.send(`search`);
             session.send(`types of boob`);
+        }else if(session.message.text.toLowerCase().contains('help')){
+            session.send(`No! I'm not Stupid... I'am Patrick Stur`);
+            session.send({attachments: [{contenttype: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3tE5kLJklxjI733R8Vi2slLshSNZytVxekn1U5xhqsbCB0Mrm'}]});
         }else{
             session.send(`Sorry I don't understand you...`);
         }
