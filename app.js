@@ -42,11 +42,13 @@ bot.on('deleteUserData', function (message) {
 String.prototype.contains = function(content){
   return this.indexOf(content) !== -1;
 }
-/*
+
 bot.dialog('/', function (session) {
-    if(session.message.text.toLowerCase().contains('hello')){
-       var name = session.message.user.name;
-       session.send("Hello %s... If you want to see some boobies you cum to the right bot ]:).", name || 'there');
+     var input = message.content.toLowerCase();
+     var name = message.user.name;
+      //starting a conversation.
+      if(input == 'hello'){
+         bot.reply(message,"Hello %s... If you want to see some boobies you cum to the right bot ]:).", name || 'there');
       }else if(session.message.text.toLowerCase().contains('boobs') || session.message.text.toLowerCase().contains('boobies') ){
         session.send(`Here you Go!`);
          session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://i.ytimg.com/vi/GX6EcdC46X8/hqdefault.jpg'}]});
@@ -55,16 +57,5 @@ bot.dialog('/', function (session) {
       }else{
         session.send(`Sorry I don't understand you...`);
       }
-}); */
+});
 
-bot.on("msessage", function(message){
-           var input = message.content.toLowerCase();
-           var name = message.user.name;
-            //starting a conversation.
-            if(input == 'hello'){
-               bot.reply(message,"Hello %s... If you want to see some boobies you cum to the right bot ]:).", name || 'there');
-            }else{
-               bot.reply(message,"Sorry %s i don't understand what you say. please try again!", name || 'there');
-            }
-      }
-      );
