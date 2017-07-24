@@ -64,6 +64,7 @@ bot.dialog('/', function (session) {
             session.send("the Huge one");
             session.send("the Watermelon");
             session.send("the I carry  2 earths on my chest");
+            session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'http://pm1.narvii.com/5984/6a9ea381340d74eeb4710b57d03b8e5c2ffda037_hq.jpg'}]});
         }else if(session.message.text.toLowerCase().contains('help')){
             session.send(`How can I help you?`);
             session.send(`i can search anything about oppai just ask me!`);
