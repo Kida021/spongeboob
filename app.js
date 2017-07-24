@@ -71,6 +71,9 @@ bot.dialog('/', function (session) {
             session.send(`Here's my available search option`);
             session.send(`search`);
             session.send(`types of boob`);
+        }else if(session.message.text.toLowerCase().contains('what is boob')){
+            session.send(`it is round and squishy thing that everyone love.`);
+            session.send(`Some are lucky to have but others lack the squishy thing. `);
         }else if(session.message.text.toLowerCase().contains('stupid')){
             session.send(`No! I'm not Stupid... I'am Patrick Stur`);
             session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://i.ytimg.com/vi/nu6zbz4UoIk/hqdefault.jpg'}]});
