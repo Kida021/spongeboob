@@ -47,12 +47,12 @@ bot.dialog('/', function (session) {
      var input = session.message.text.content.toLowerCase().containts(session);
      var name = session.message.user.name;
       //starting a conversation.
-      if(session.message.text.toLowerCase().contains('hello') ){
+      if(session.message.text.toLowerCase().contains('hello')){
          session.send("Hello %s... If you want to see some boobies you cum to the right bot ]:).", name || 'there');
-      }else if(session.message.text.toLowerCase().contains('boobs') || session.message.text.toLowerCase().contains('boobies') ){
-        session.send(`Here you Go!`);
+       }else if(session.message.text.toLowerCase().contains('boobs') || session.message.text.toLowerCase().contains('boobies') ){
+         session.send(`Here you Go!`);
          session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://i.ytimg.com/vi/GX6EcdC46X8/hqdefault.jpg'}]});
-      }else if(session.message.text.toLowerCase().contains('help')){
+        }else if(session.message.text.toLowerCase().contains('help')){
         session.send(`How can I help you?`);
       }else{
         session.send(`Sorry I don't understand you...`);
