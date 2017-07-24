@@ -74,7 +74,7 @@ bot.dialog('/', function (session) {
         }else if(session.message.text.toLowerCase().contains('what is boob')){
             session.send(`it is round and squishy thing that everyone love.`);
             session.send(`Some are lucky to have a juicy and bouncy boobs but others lack the squishy thing. `);
-           session.send({attachments: [{contenttype: 'image/gif', contenturl: 'https://68.media.tumblr.com/09e1261d234405092d440911579b0094/tumblr_inline_nd3ariw6M31rkhir3.gif'}]});
+           session.send('https://68.media.tumblr.com/09e1261d234405092d440911579b0094/tumblr_inline_nd3ariw6M31rkhir3.gif');
         }else if(session.message.text.toLowerCase().contains('stupid')){
             session.send(`No! I'm not Stupid... I'am Patrick Stur`);
             session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://i.ytimg.com/vi/nu6zbz4UoIk/hqdefault.jpg'}]});
