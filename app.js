@@ -44,7 +44,7 @@ String.prototype.contains = function(content){
 }
 
 bot.dialog('/', function (session) {
-     var input = session.message.text.content.toLowerCase();
+     var input = session.message.text.content.toLowerCase().containts(session);
      var name = session.message.user.name;
       //starting a conversation.
       if(input == 'hello'){
