@@ -50,6 +50,9 @@ bot.dialog('/', function (session) {
       }else if(session.message.text.toLowerCase().contains('boobs') || session.message.text.toLowerCase().contains('boobies') ){
          session.send(`Here you Go!`);
          session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://i.ytimg.com/vi/GX6EcdC46X8/hqdefault.jpg'}]});
+        }else if(session.message.text.toLowerCase().contains('flat') || session.message.text.toLowerCase().contains('plank') ){
+         session.send(`Here you Go!`);
+         session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://vignette2.wikia.nocookie.net/edwikia/images/e/ee/Plank.jpg/revision/latest/scale-to-width-down/338?cb=20101125042626'}]});
         }else if(session.message.text.toLowerCase().contains('help')){
         session.send(`How can I help you?`);
       }else{
