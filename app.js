@@ -47,7 +47,7 @@ bot.dialog('/', function (session) {
      var input = session.message.text.content.toLowerCase().containts(session);
      var name = session.message.user.name;
       //starting a conversation.
-      if(ession.message.text.toLowerCase().contains('hello') ){
+      if(session.message.text.toLowerCase().contains('hello') ){
          session.send("Hello %s... If you want to see some boobies you cum to the right bot ]:).", name || 'there');
       }else if(session.message.text.toLowerCase().contains('boobs') || session.message.text.toLowerCase().contains('boobies') ){
         session.send(`Here you Go!`);
