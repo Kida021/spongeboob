@@ -64,7 +64,9 @@ bot.dialog('/', function (session) {
             session.send("the I carry  2 earths on my chest");
         }else if(session.message.text.toLowerCase().contains('help')){
             session.send(`How can I help you?`);
-            session.send(`How can I help you?`);
+            session.send(`i can search anything about oppai just ask me!`);
+            session.send(`Here's my available search option`);
+            session.send(`search`);   
         }else{
             session.send(`Sorry I don't understand you...`);
         }
