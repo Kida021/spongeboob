@@ -42,6 +42,7 @@ bot.on('deleteUserData', function (message) {
 String.prototype.contains = function(content){
   return this.indexOf(content) !== -1;
 }
+/*
 bot.dialog('/', function (session) {
     if(session.message.text.toLowerCase().contains('hello')){
        var name = session.message.user.name;
@@ -54,4 +55,15 @@ bot.dialog('/', function (session) {
       }else{
         session.send(`Sorry I don't understand you...`);
       }
-});
+}); */
+
+bot.on("msessage", function(message){
+           var input = message.content.toLowerCase();
+   
+            //starting a conversation.
+            if(input == 'hello'){
+               var name = message.user.name;
+               bot.reply(message,"Hello %s... If you want to see some boobies you cum to the right bot ]:).", name || 'there');
+            }
+      }
+      );
