@@ -51,7 +51,7 @@ bot.dialog('/', function (session) {
          session.send(`Here you Go!`);
          session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://i.ytimg.com/vi/GX6EcdC46X8/hqdefault.jpg'}]});
         }else if(session.message.text.toLowerCase().contains('flat') || session.message.text.toLowerCase().contains('plank') ){
-         session.send(`Here you Go!`);
+         session.send(`Sorry there's nothing! ;( `);
          session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://pbs.twimg.com/profile_images/2170836498/404girl.jpg'}]});
         }else if(session.message.text.toLowerCase().contains('types of boob')){
             session.send('Here are the Type of B(.)(.)BS that i know!');
