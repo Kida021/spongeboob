@@ -48,7 +48,7 @@ bot.dialog('/', function (session) {
      var name = session.message.user.name;
       //starting a conversation.
       if(ession.message.text.toLowerCase().contains('hello') ){
-         bot.reply(session,"Hello %s... If you want to see some boobies you cum to the right bot ]:).", name || 'there');
+         session.send("Hello %s... If you want to see some boobies you cum to the right bot ]:).", name || 'there');
       }else if(session.message.text.toLowerCase().contains('boobs') || session.message.text.toLowerCase().contains('boobies') ){
         session.send(`Here you Go!`);
          session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://i.ytimg.com/vi/GX6EcdC46X8/hqdefault.jpg'}]});
