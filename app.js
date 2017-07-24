@@ -72,7 +72,9 @@ bot.dialog('/', function (session) {
             session.send(`types of boob`);
         }else if(session.message.text.toLowerCase().contains('stupid')){
             session.send(`No! I'm not Stupid... I'am Patrick Stur`);
-            session.send({attachments: [{contenttype: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3tE5kLJklxjI733R8Vi2slLshSNZytVxekn1U5xhqsbCB0Mrm'}]});
+            session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://i.ytimg.com/vi/nu6zbz4UoIk/hqdefault.jpg'}]});
+            session.send(`No! This is Patrick Stur`);
+            session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'http://static1.fjcdn.com/comments/4660875+_0515275ab17a59769fb0de76d2445a97.jpg'}]});
         }else{
             session.send(`Sorry I don't understand you...`);
         }
