@@ -53,6 +53,14 @@ bot.dialog('/', function (session) {
         }else if(session.message.text.toLowerCase().contains('flat') || session.message.text.toLowerCase().contains('plank') ){
          session.send(`Here you Go!`);
          session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://vignette2.wikia.nocookie.net/edwikia/images/e/ee/Plank.jpg/revision/latest/scale-to-width-down/338?cb=20101125042626'}]});
+        }else if(session.message.text.toLowerCase().contains('types of boobs') || session.message.text.toLowerCase().contains('types of boobies') ){
+            session.send('Theres the FLAT AS F...');
+            session.send("Theres the Medium Flat");
+            session.send("Theres the Average one");
+            session.send("Theres the Above Avarage");
+            session.send("Theres the Huge one");
+            session.send("Theres the Watermelon");
+            session.send("Theres the I carry the 2 earths on my chest");
         }else if(session.message.text.toLowerCase().contains('help')){
         session.send(`How can I help you?`);
       }else{
