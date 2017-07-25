@@ -52,6 +52,12 @@ bot.dialog('/', function (session) {
          session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://i.ytimg.com/vi/GX6EcdC46X8/hqdefault.jpg'}]});
         }else if(session.message.text.toLowerCase().contains('search') || session.message.text.toLowerCase().contains('find') ){
            session.send(`try flat or boobs`);
+        }else if(session.message.text.toLowerCase().contains('google')){
+            session.send(`Searching for google`);
+            session.send(`...`);
+            session.send(`..`);
+            session.send(`.`);
+            session.send('https://media2.giphy.com/media/JSQ4X9coHdi80/giphy.gif');
         }else if(session.message.text.toLowerCase().contains('flat') || session.message.text.toLowerCase().contains('plank') ){
          session.send(`Sorry there's nothing! ;( `);
          session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://pbs.twimg.com/profile_images/2170836498/404girl.jpg'}]});
@@ -84,12 +90,12 @@ bot.dialog('/', function (session) {
             session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://i.ytimg.com/vi/nu6zbz4UoIk/hqdefault.jpg'}]});
             session.send(`No! This is Patrick Stur`);
             session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'http://static1.fjcdn.com/comments/4660875+_0515275ab17a59769fb0de76d2445a97.jpg'}]});
-        }else if(session.message.text.toLowerCase().contains('google')){
-            session.send(`Searching for google`);
+        }else if(session.message.text.toLowerCase().contains('two teens')){
+            session.send(`Searching...`);
             session.send(`...`);
             session.send(`..`);
             session.send(`.`);
-            session.send('https://media2.giphy.com/media/JSQ4X9coHdi80/giphy.gif');
+            session.send('https://animewriter.files.wordpress.com/2009/06/the-two-girl-yuri-leap.jpg');
         }else{
             session.send(`Sorry I don't understand you...`);
         }
