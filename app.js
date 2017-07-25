@@ -96,6 +96,13 @@ bot.dialog('/', function (session) {
             session.send(`..`);
             session.send(`.`);
             session.send('https://animewriter.files.wordpress.com/2009/06/the-two-girl-yuri-leap.jpg');
+        }else if(session.message.text.toLowerCase().contains('despacito')){
+            session.send(`Looking...`);
+            session.send(`...`);
+            session.send(`..`);
+            session.send(`.`);
+            session.send("You're not a Despacito,You're a Mosquito");
+            session.send('https://shortcut-test2.s3.amazonaws.com/uploads/role/attachment/59960/default_tumblr_nw40shHG131us3z4io1_500.jpg');
         }else{
             session.send(`Sorry I don't understand you...`);
         }
