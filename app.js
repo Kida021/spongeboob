@@ -103,6 +103,13 @@ bot.dialog('/', function (session) {
             session.send(`.`);
             session.send("You're not a Despacito,You're a Mosquito");
             session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://shortcut-test2.s3.amazonaws.com/uploads/role/attachment/59960/default_tumblr_nw40shHG131us3z4io1_500.jpg'}]});
+        }else if(session.message.text.toLowerCase().contains('potato')){
+            session.send(`Looking...`);
+            session.send(`...`);
+            session.send(`..`);
+            session.send(`.`);
+            session.send("You're gorgeous <3");
+            session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://img.buzzfeed.com/buzzfeed-static/static/2014-11/20/21/campaign_images/webdr06/39-things-that-look-like-boobs-2-25576-1416537048-4_dblbig.jpg'}]});
         }else{
             session.send(`Sorry I don't understand you...`);
         }
