@@ -84,6 +84,12 @@ bot.dialog('/', function (session) {
             session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://i.ytimg.com/vi/nu6zbz4UoIk/hqdefault.jpg'}]});
             session.send(`No! This is Patrick Stur`);
             session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'http://static1.fjcdn.com/comments/4660875+_0515275ab17a59769fb0de76d2445a97.jpg'}]});
+        }else if(session.message.text.toLowerCase().contains('google')){
+            session.send(`Searching for google`);
+            session.send(`...`);
+            session.send(`..`);
+            session.send(`.`);
+            session.send('https://media2.giphy.com/media/JSQ4X9coHdi80/giphy.gif');
         }else{
             session.send(`Sorry I don't understand you...`);
         }
