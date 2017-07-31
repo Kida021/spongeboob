@@ -62,7 +62,7 @@ bot.dialog('/', function (session) {
          session.send(`Sorry there's nothing! ;( `);
          session.send({attachments: [{contenttype: 'image/jpg', contenturl: 'https://pbs.twimg.com/profile_images/2170836498/404girl.jpg'}]});
         }else if(session.message.text.toLowerCase().contains('types of boob')){
-            session.send('Here are the Type of B(.)(.)BS that i know!');
+            session.send('Here are the Type of B( . )( . )BS that i know!');
             session.send('the FLAT AS F...');
             session.send("the Medium Flat");
             session.send("the Average one");
@@ -77,6 +77,10 @@ bot.dialog('/', function (session) {
             session.send(`Here's my available search option`);
             session.send(`search`);
             session.send(`types of boob`);
+           session.send(`google`);
+           session.send(`good morning`);
+           session.send(`what is boob`);
+           session.send(`potato`);
         }else if(session.message.text.toLowerCase().contains('what is boob')){
             session.send(`it is round and squishy thing that everyone love.`);
             session.send(`Some are lucky to have a juicy and bouncy boobs but others lack the squishy thing. `);
